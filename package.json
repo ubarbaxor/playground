@@ -1,0 +1,22 @@
+{
+  "name": "alaschlag",
+  "version": "1.0.0",
+  "description": "playground",
+  "repository": "https://github.com/ubarbaxor/playground",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js",
+    "client": "node ./client/index.js",
+    "srv": "node ./server/index.js",
+    "test": "ava tests"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mime": "^1.3.4"
+  },
+  "devDependencies": {
+    "ava": "^0.21.0",
+    "nodemon": "^1.11.0"
+  }
+}

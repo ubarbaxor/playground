@@ -1,0 +1,40 @@
+/* Main accent, secondary accent, neutral color, background color */
+:root {
+  --neutral: #C6C6C6;
+  --dark: #3C3C3B;
+  --light: #28AEB8;
+  --bright: #FFFBFA;
+  --accent: #F9B316;
+}
+
+.dashed-neutral { border: 1px dashed var(--neutral) }
+.dashed-dark { border: 1px dashed var(--dark) }
+.dashed-light { border: 1px dashed var(--light) }
+.dashed-bright { border: 1px dashed var(--bright) }
+.dashed-accent { border: 1px dashed var(--accent) }
+
+.bg-neutral { background-color: var(--neutral) }
+.bg-dark { background-color: var(--dark) }
+.bg-light { background-color: var(--light) }
+.bg-bright { background-color: var(--bright) }
+.bg-accent { background-color: var(--accent) }
+
+.container {
+  display: flex;
+  padding: 5px;
+}
+
+.logo-thumb {
+  margin: 5px;
+  height: 50px;
+}
+
+body {
+  background: var(--neutral);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+footer {
+  margin-top: auto;
+}
