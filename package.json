@@ -5,10 +5,13 @@
   "repository": "https://github.com/ubarbaxor/playground",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./index.js",
     "client": "node ./client/index.js",
+    "coverage": "nyc ava",
+    "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",
+    "dev": "nodemon ./index.js",
+    "lint": "standard",
     "srv": "node ./server/index.js",
-    "test": "ava tests"
+    "test": "ava"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +20,9 @@
   },
   "devDependencies": {
     "ava": "^0.21.0",
-    "nodemon": "^1.11.0"
+    "codecov": "^2.2.0",
+    "nodemon": "^1.11.0",
+    "nyc": "^11.0.3",
+    "standard": "^10.0.2"
   }
 }

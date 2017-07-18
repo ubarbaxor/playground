@@ -10,22 +10,23 @@ const handler = (req, res, next) => {
   next()
 }
 
-handler.test = url => {
-  const test = require('assert')
-  url = url || '/root/test?firstParam=one&another=true&a%20number=42'
-  let req = {url}
+// TODO: move that to ava
+// handler.test = url => {
+//   const test = require('assert')
+//   url = url || '/root/test?firstParam=one&another=true&a%20number=42'
+//   let req = {url}
 
-  const next = x => {
-    test(req, 'no req ?!!')
-    test(req.url, 'No URL in request')
-    test(req.parsedUrl, 'No parsedUrl in req')
-    test.equal(req.parsedUrl.pathname, '/root/test', 'Invalid pathname')
-    test(!x)
-  }
+//   const next = x => {
+//     test(req, 'no req ?!!')
+//     test(req.url, 'No URL in request')
+//     test(req.parsedUrl, 'No parsedUrl in req')
+//     test.equal(req.parsedUrl.pathname, '/root/test', 'Invalid pathname')
+//     test(!x)
+//   }
 
 
-  handler(req, {}, next)
-  return handler
-}
+//   handler(req, {}, next)
+//   return handler
+// }
 
-module.exports = handler.test()
+module.exports = handler
