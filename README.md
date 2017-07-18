@@ -1,12 +1,11 @@
-master | dev
--------|-------
-[![Build Status](https://travis-ci.org/ubarbaxor/playground.svg?branch=master)](https://travis-ci.org/ubarbaxor/playground) | [![Build Status](https://travis-ci.org/ubarbaxor/playground.svg?branch=master)](https://travis-ci.org/ubarbaxor/playground)
+master | dev | coverage
+-------|-----|---------
+[![Build Status](https://travis-ci.org/ubarbaxor/playground.svg?branch=master)](https://travis-ci.org/ubarbaxor/playground) | [![Build Status](https://travis-ci.org/ubarbaxor/playground.svg?branch=master)](https://travis-ci.org/ubarbaxor/playground) | [![codecov](https://codecov.io/gh/ubarbaxor/playground/branch/dev/graph/badge.svg)](https://codecov.io/gh/ubarbaxor/playground)
 
 # WIP
 - [x] Add a Readme
 - [x] Setup Node server
 - [x] Write a router
-- [ ] Write meaningful tests
 - [x] Setup CI
 - [ ] Dockerize
 
