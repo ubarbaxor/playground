@@ -2,7 +2,7 @@ const http = require('http')
 
 const config = {
   host: 'localhost',
-  port: 8877,
+  port: 8877
 }
 
 const onListen = ({host, port}) => {

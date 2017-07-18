@@ -1,5 +1,5 @@
 const url = require('url')
-const qs = require('querystring')
+// const qs = require('querystring')
 
 const handler = (req, res, next) => {
   req.parsedUrl = url.parse(req.url, true)
@@ -23,7 +23,6 @@ const handler = (req, res, next) => {
 //     test.equal(req.parsedUrl.pathname, '/root/test', 'Invalid pathname')
 //     test(!x)
 //   }
-
 
 //   handler(req, {}, next)
 //   return handler

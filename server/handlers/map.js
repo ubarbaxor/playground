@@ -10,7 +10,7 @@ const setUsername = (req, res) => {
   res.end(`You are called: ${username}`)
 }
 
-const pong = (req, res) => req.pipe(res)//(req.body)
+const pong = (req, res) => req.pipe(res)// (req.body)
 
 const testMap = {
   'ping': pong,
@@ -22,10 +22,8 @@ const testMap = {
 
 const testNode = (node, req) => {
   console.log('testNode testing ', node)
-  if (testMap[req.method])
-    return testMap[req.method]
-  if (typeof(node) === 'function')
-    return node
+  if (testMap[req.method]) { return testMap[req.method] }
+  if (typeof (node) === 'function') { return node }
   return (req, res) => { res.end('Not found') }
 }
 
@@ -44,10 +42,7 @@ const MapHandler = map => (req, res, next) => {
 
   let handler = testNode(node, req)
   console.log('in mapHandler, handler : ', handler)
-  if (!handler)
-    return next()
-  else
-    handler(req, res, next)
+  if (!handler) { return next() } else { handler(req, res, next) }
 }
 
 module.exports = MapHandler(testMap)

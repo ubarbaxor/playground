@@ -1,6 +1,6 @@
-const fs = require('fs'),
-  http = require('http'),
-  path = require('path')
+const fs = require('fs')
+const http = require('http')
+const path = require('path')
 
 const mime = require('mime')
 
@@ -11,7 +11,7 @@ const toPath = url => {
   const filePath = path.resolve(root + url)
 
   return fs.existsSync(filePath) &&
-    ( fs.statSync(filePath).isDirectory()
+    (fs.statSync(filePath).isDirectory()
     ? path.join(filePath, 'index.html')
     : filePath
     )

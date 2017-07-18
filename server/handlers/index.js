@@ -1,7 +1,7 @@
 const logger = require('./logger')
 const queryParser = require('./queryParser')
 const map = require('./map')
-const _ = require('../helpers')
+// const _ = require('../helpers')
 
 // const routes = {
 //   // Stupid default GET
@@ -14,8 +14,8 @@ const _ = require('../helpers')
 const handlers = [
   logger,
   queryParser,
-  map,//(routes) // let map use default routes for tests
-  () => res.end('not found.')
+  map, // (routes) // let map use default routes for tests
+  (req, res) => res.end('not found.')
 ]
 // console.log(handlers)
 
@@ -28,9 +28,8 @@ const handler = (req, res) => {
   //   res.end('Not found.')
   // }
   const next = fn => {
-    console.log(current, handlers[current])
-    if (fn)
-      { handlers.splice(current, 0, fn) }// do next
+    // console.log(current, handlers[current])
+    if (fn) { handlers.splice(current, 0, fn) }// do next
     // current ++ // Increment callee index
     handlers[current++](req, res, next) // call
   }

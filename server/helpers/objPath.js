@@ -1,29 +1,32 @@
 const testObj = {
-  "i am": 'simple',
+  'i am': 'simple',
   answer: 42,
   a: {
     little: [ 'nesting', 'really?' ]
   },
   and: {
     another: { nested: ['array'] } }
-  }
+}
 
-const objPath = (o, path) => (console.log('path in oPath :', path,'\no in oPath :'), console.log(o),
+const objPath = (o, path) =>// (console.log('path in oPath :', path, '\no in oPath :'), console.log(o),
 path // check args
   ? path.reduce && path.reduce((acc, val, curr, arr) => acc[val] || acc, o)
-  : path => objPath(o, path))// curry if only 1 arg is provided
+  : path => objPath(o, path)// )// curry if only 1 arg is provided
 
 const trimSlashes = str => str.replace(/^\/+|\/+$/g, '')
 objPath.fromUrl = url => trimSlashes(url).split('/')
+// TODO: Move this to Ava
 objPath.test = (success = 'objPath test OK') => {
   const test = require('assert')
   let pathTest = objPath(testObj)
   // curried
-  test.strictEqual(typeof(pathTest), 'function')
+  test.strictEqual(typeof (pathTest), 'function')
   // simple
   test.strictEqual(pathTest(['i am']), 'simple')
   test.strictEqual(pathTest(['answer']), 42)
-  test.deepStrictEqual(pathTest(['and','another']), { nested: ['array']},
+  test.deepStrictEqual(pathTest(
+    ['and', 'another']),
+    { nested: ['array'] },
     'Invalid resolution in objPath')
   // URL tests
   const u = x => JSON.stringify(objPath.fromUrl(x))
@@ -37,7 +40,7 @@ objPath.test = (success = 'objPath test OK') => {
   test.deepStrictEqual(pathTest(u('and/another/nested/0', 'array')))
 
   console.log(success)
-  return(objPath)
+  return (objPath)
 }
 
 // module.exports = objPath.test()
