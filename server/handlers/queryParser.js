@@ -4,6 +4,7 @@ const qs = require('querystring')
 const handler = (req, res, next) => {
   req.parsedUrl = url.parse(req.url, true)
   console.log(req.parsedUrl)
+  req.query = req.parsedUrl.query
 
 // console.log('in queryParser, next: ', next)
   next()

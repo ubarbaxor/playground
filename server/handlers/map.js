@@ -7,15 +7,17 @@ const greet = (req, res) => {
 
 const setUsername = (req, res) => {
   username = req.query.username || ''
-  req.end(username)
+  res.end(`You are called: ${username}`)
 }
 
 const pong = (req, res) => req.pipe(res)//(req.body)
 
 const testMap = {
-  'GET': greet,
-  'set': setUsername,
-  'ping': pong
+  'ping': pong,
+  user: {
+    get: greet,
+    set: setUsername
+  }
 }
 
 const testNode = (node, req) => {
@@ -32,7 +34,7 @@ const splitPath = url => url.split('/').filter(x => x)
 const objPath = require('../helpers/objPath')
 
 const MapHandler = map => (req, res, next) => {
-  let path = splitPath(req.url)
+  let path = splitPath(req.parsedUrl.pathname)
   let node = objPath(testMap, path)
 
   console.log('PATH, MAP, NODE in mapHandler')
@@ -42,7 +44,10 @@ const MapHandler = map => (req, res, next) => {
 
   let handler = testNode(node, req)
   console.log('in mapHandler, handler : ', handler)
-  return next( testNode(node, req) )
+  if (!handler)
+    return next()
+  else
+    handler(req, res, next)
 }
 
 module.exports = MapHandler(testMap)
