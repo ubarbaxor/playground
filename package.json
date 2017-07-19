@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "client": "node ./client/index.js",
-    "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "dev": "nodemon ./index.js",
     "lint": "standard --fix",
     "srv": "node ./server/index.js",

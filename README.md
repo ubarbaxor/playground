@@ -1,6 +1,7 @@
-master | dev | coverage
--------|-----|---------
-[![Build Status](https://travis-ci.org/ubarbaxor/playground.svg?branch=master)](https://travis-ci.org/ubarbaxor/playground) | [![Build Status](https://travis-ci.org/ubarbaxor/playground.svg?branch=master)](https://travis-ci.org/ubarbaxor/playground) | [![codecov](https://codecov.io/gh/ubarbaxor/playground/branch/dev/graph/badge.svg)](https://codecov.io/gh/ubarbaxor/playground)
+master | dev | coverage | linter 
+-------|-----|----------|-------
+[![Build Status](https://travis-ci.org/ubarbaxor/playground.svg?branch=master)](https://travis-ci.org/ubarbaxor/playground) | [![Build Status](https://travis-ci.org/ubarbaxor/playground.svg?branch=master)](https://travis-ci.org/ubarbaxor/playground) | [![codecov](https://codecov.io/gh/ubarbaxor/playground/branch/dev/graph/badge.svg)](https://codecov.io/gh/ubarbaxor/playground) | [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 
 # WIP
 - [x] Add a Readme
