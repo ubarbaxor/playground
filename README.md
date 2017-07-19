@@ -11,5 +11,5 @@ master | dev | coverage | linter
 - [ ] Dockerize
 
 ## disclaimer
-This is a simple playground, built from the ground up to try stuff. Nothing here should be considered production-ready, and no specifig goal is aimed at in this repository.
+This is a simple playground, built from the ground up to try stuff. Nothing here should be considered production-ready, and no specific goal is aimed at in this repository.
 If you find anything useful, feel free to share with or without crediting back.
